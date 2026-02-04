@@ -22,19 +22,19 @@ const livePerformances = [
   { year: "2005", event: "Music & Movie - SKY TV", location: "Italia" }
 ];
 
-const biographyText = `Sulla scena dal 1998, membro di Zulu Nation Italia e della Gatekeepaz crew. Artista indipendente di B.M.records, OneDayLabel e KOF97.
+const biographyText = `Sulla scena dal 1998, membro di Zulu Nation Italia, e della Gatekeepaz crew. Artista indipendente di B.M.records, OneDayLabel, e KOF97.
 
-Viene notato nel 2002 su ERMAGEDDON di Erma stampato da Vitaminic, nel 2003 DJ MESTA lo inserisce in INVASIONE MIXTAPE vol.1 con il suo gruppo di allora le "Menti Folli" insieme a Kyosho, nel 2004 fa parte della compilation "HIP HOP UNITED a european Hip-Hop compilation", distribuito da FAT BEATS nei Paesi Bassi.
-
-Nello stesso anno esce in edicola con il singolo "SOGNI" prodotto da Mastafive inserito nel "Sampler03" allegato a DABOMB MAGAZINE, e nel 2005 su "Dammi un beat" di Mastafive distribuito in edicola. Lo stesso anno è ospite del programma "Music & Movie" su Italia Teen Television di SKY TV con Tiso e Daniela Ferolla (Miss Italia 2001) e selezionato per l'omonima compilation distribuita nei negozi.
+Viene notato nel 2002 su ERMAGEDDON di Erma stampato da Vitaminic, nel 2003 DJ MESTA lo inserisce in INVASIONE MIXTAPE vol.1 con il suo gruppo di allora le "Menti Folli" insieme a Kyosho, nel 2004 fa parte della compilation "HIP HOP UNITED a european Hip-Hop compilation", distribuito da FAT BEATS nei Paesi Bassi, nello stesso anno esce in edicola con il singolo "SOGNI" prodotto da Mastafive inserito nel "Sampler03" allegato a DABOMB MAGAZINE, e nel 2005 su "Dammi un beat" di Mastafive distribuito in edicola, lo stesso anno è ospite del programma "Music & Movie" su Italia Teen Television di SKY TV con Tiso e Daniela Ferolla (Miss Italia 2001) e selezionato per l'omonima compilation distribuita nei negozi.
 
 Nel 2006 partecipa a "Dhiram records mixtape" di El Invikto, unico italiano partecipante oltre a Fabri Fibra. Nel 2007 esce il suo primo album "Prima di dormire", mentre le collaborazioni internazionali continuano tra Italia, Polonia, Ungheria e Colombia.
 
 Nel 2009 il produttore Francese James Digger lo contatta per partecipare al suo album "Babytraxx is James Digger", Strike tira in ballo tutta la crew, "C'est le crew" vede sulla produzione francese gran parte dei Gate Keepaz.
 
+Nel 2010 viene interamente prodotto dallo spagnolo Bustaphort realizzando l'EP "Disturbi del sonno".
+
 Nel 2011 realizza insieme a Coolkitz un album scritto e registrato in 24 ore "OneDayMaking" e nel 2012 entra nella compilation "4MYPEOPLE vol.1" in allegato a WEGOTFLAVA, Magazine di cui è anche redattore.
 
-Nel 2013 DJ Jad (Articolo 31) inserisce una sua traccia nel suo "Cool Tape" e nel 2014 realizzano insieme il singolo "UPPERGROUND". Lo stesso anno compare nel programma televisivo "UNTI E BISUNTI 2" su D-MAX.
+Nel 2013 DJ Jad (Articolo 31) realizza per Strike gli scratch di "Inmortal" inserita nel disco "Tridream state" omaggio a Nujabes prodotto dal team spagnolo G.SOUL (Bustaphort & Arlan) e nel 2014 la collaborazione con "il Sarto" continua nel singolo "UPPERGROUND" prodotto proprio da DJ JAD. Lo stesso anno compare nel programma televisivo "UNTI E BISUNTI 2" su D-MAX.
 
 Nel 2015 compare nel documentario RAI "I GIGANTI" e finisce su Billboard USA con il progetto #HIPHOPISHIPHOP brano internazionale realizzato per l'UNICEF dal koreano San-E a cui prende parte anche la leggenda KRS-One.
 
@@ -44,7 +44,9 @@ Nel 2017 l'indonesiano Rand Slam lo chiama a partecipare nel suo disco "RIMAJINA
 
 Nel 2023 torna a fare dischi insieme a Coolkitz con "Diamanti Grezzi" un disco dalle sonorità Golden Age, che è stato passato in Radio FM anche in Francia, Inghilterra e Galles.
 
-Nel 2025 Strike collabora nuovamente con MR PHORMULA e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.`;
+Nel 2025 Strike collabora nuovamente con MR PHORMULA e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.
+
+Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.`;
 
 // Navbar Component
 const Navbar = () => {
