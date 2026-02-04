@@ -3,17 +3,16 @@ import "@/App.css";
 import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink } from "lucide-react";
 
 // Artist Data
-const ARTIST_DATA = {
-  name: "STRIKE THE HEAD",
-  tagline: "SULLA SCENA DAL 1998",
-  videoId: "4cwdmZ2DHP0",
-  socials: {
-    instagram: "https://www.instagram.com/strikethehead/",
-    youtube: "https://www.youtube.com/@striketheheadofficial",
-    spotify: "https://open.spotify.com/intl-it/artist/73z0OCKr558bQfMGcA2kIv?si=iKTIsQLTS6yw1cekv_obHw",
-    facebook: "https://www.facebook.com/striketheheadofficial"
-  },
-  bio: `Sulla scena dal 1998, membro di Zulu Nation Italia e della Gatekeepaz crew. Artista indipendente di B.M.records, OneDayLabel e KOF97.
+const artistName = "STRIKE THE HEAD";
+const artistTagline = "SULLA SCENA DAL 1998";
+const videoId = "4cwdmZ2DHP0";
+
+const socialInstagram = "https://www.instagram.com/strikethehead/";
+const socialYoutube = "https://www.youtube.com/@striketheheadofficial";
+const socialSpotify = "https://open.spotify.com/intl-it/artist/73z0OCKr558bQfMGcA2kIv?si=iKTIsQLTS6yw1cekv_obHw";
+const socialFacebook = "https://www.facebook.com/striketheheadofficial";
+
+const biographyText = `Sulla scena dal 1998, membro di Zulu Nation Italia e della Gatekeepaz crew. Artista indipendente di B.M.records, OneDayLabel e KOF97.
 
 Viene notato nel 2002 su ERMAGEDDON di Erma stampato da Vitaminic, nel 2003 DJ MESTA lo inserisce in INVASIONE MIXTAPE vol.1 con il suo gruppo di allora le "Menti Folli" insieme a Kyosho, nel 2004 fa parte della compilation "HIP HOP UNITED a european Hip-Hop compilation", distribuito da FAT BEATS nei Paesi Bassi.
 
@@ -35,19 +34,7 @@ Nel 2017 l'indonesiano Rand Slam lo chiama a partecipare nel suo disco "RIMAJINA
 
 Nel 2023 torna a fare dischi insieme a Coolkitz con "Diamanti Grezzi" un disco dalle sonorità Golden Age, che è stato passato in Radio FM anche in Francia, Inghilterra e Galles.
 
-Nel 2025 Strike collabora nuovamente con MR PHORMULA e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.`,
-  discography: {
-    albums: [
-      { year: "2023", title: "Diamanti Grezzi", artist: "Coolkitz & Strike The Head" },
-      { year: "2011", title: "One Day Making", artist: "Coolkitz & Strike The Head" },
-      { year: "2007", title: "Prima di dormire", artist: "Strike The Head" }
-    ],
-    eps: [
-      { year: "2014", title: "Amare non basta mai", artist: "Strike The Head" },
-      { year: "2010", title: "Disturbi del sonno", artist: "Strike The Head" }
-    ]
-  }
-};
+Nel 2025 Strike collabora nuovamente con MR PHORMULA e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.`;
 
 // Navbar Component
 const Navbar = () => {
@@ -79,10 +66,10 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <a href={ARTIST_DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
+          <a href={socialInstagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
             <Instagram size={18} />
           </a>
-          <a href={ARTIST_DATA.socials.spotify} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-spotify">
+          <a href={socialSpotify} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-spotify">
             <Music2 size={18} />
           </a>
         </div>
@@ -106,10 +93,10 @@ const HeroSection = () => {
           Zulu Nation Italia • Gatekeepaz Crew
         </p>
         <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl tracking-tight uppercase mb-6 animate-fadeInUp opacity-0" style={{ animationDelay: "0.4s" }} data-testid="hero-title">
-          {ARTIST_DATA.name}
+          {artistName}
         </h1>
         <p className="text-lg md:text-xl text-zinc-400 mb-8 animate-fadeInUp opacity-0" style={{ animationDelay: "0.6s" }}>
-          {ARTIST_DATA.tagline}
+          {artistTagline}
         </p>
         <a 
           href="#video" 
@@ -138,7 +125,7 @@ const VideoSection = () => {
         <h2 className="section-title animate-fadeInUp">Ultimo Video</h2>
         <div className="video-container animate-fadeInUp" style={{ animationDelay: "0.2s" }} data-testid="video-container">
           <iframe
-            src={`https://www.youtube.com/embed/${ARTIST_DATA.videoId}?rel=0&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
             title="Strike The Head - Ultimo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -147,7 +134,7 @@ const VideoSection = () => {
         </div>
         <div className="mt-8 text-center">
           <a 
-            href={`https://www.youtube.com/watch?v=${ARTIST_DATA.videoId}`}
+            href={`https://www.youtube.com/watch?v=${videoId}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-zinc-400 hover:text-[#D4AF37] transition-colors duration-300"
@@ -165,7 +152,9 @@ const VideoSection = () => {
 // Biography Section
 const BioSection = () => {
   const [expanded, setExpanded] = useState(false);
-  const shortBio = ARTIST_DATA.bio.split('\n\n').slice(0, 3).join('\n\n');
+  const paragraphs = biographyText.split('\n\n');
+  const shortBio = paragraphs.slice(0, 3);
+  const displayBio = expanded ? paragraphs : shortBio;
 
   return (
     <section id="bio" className="section" style={{ background: "#0A0A0A" }} data-testid="bio-section">
@@ -181,7 +170,7 @@ const BioSection = () => {
             <p className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-4">Biografia</p>
             <h2 className="section-title mb-8" style={{ marginBottom: "2rem" }}>La Storia</h2>
             <div className="text-zinc-400 leading-relaxed space-y-4" data-testid="bio-text">
-              {(expanded ? ARTIST_DATA.bio : shortBio).split('\n\n').map((paragraph, index) => (
+              {displayBio.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -199,6 +188,22 @@ const BioSection = () => {
   );
 };
 
+// Album Card Component
+const AlbumCard = ({ type, year, title, artist, index }) => {
+  return (
+    <div 
+      className="album-card animate-fadeInUp" 
+      style={{ animationDelay: `${index * 0.1}s` }}
+      data-testid={`album-card-${index}`}
+    >
+      <p className="album-type">{type}</p>
+      <p className="album-year">{year}</p>
+      <h4 className="album-title">{title}</h4>
+      <p className="album-artist">{artist}</p>
+    </div>
+  );
+};
+
 // Discography Section
 const DiscographySection = () => {
   return (
@@ -210,19 +215,9 @@ const DiscographySection = () => {
         <div className="mb-12">
           <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">Album</h3>
           <div className="discography-grid" data-testid="albums-grid">
-            {ARTIST_DATA.discography.albums.map((album, index) => (
-              <div 
-                key={index} 
-                className="album-card animate-fadeInUp" 
-                style={{ animationDelay: `${index * 0.1}s` }}
-                data-testid={`album-card-${index}`}
-              >
-                <p className="album-type">Album</p>
-                <p className="album-year">{album.year}</p>
-                <h4 className="album-title">{album.title}</h4>
-                <p className="album-artist">{album.artist}</p>
-              </div>
-            ))}
+            <AlbumCard type="Album" year="2023" title="Diamanti Grezzi" artist="Coolkitz & Strike The Head" index={0} />
+            <AlbumCard type="Album" year="2011" title="One Day Making" artist="Coolkitz & Strike The Head" index={1} />
+            <AlbumCard type="Album" year="2007" title="Prima di dormire" artist="Strike The Head" index={2} />
           </div>
         </div>
 
@@ -230,19 +225,8 @@ const DiscographySection = () => {
         <div>
           <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">EP</h3>
           <div className="discography-grid" data-testid="eps-grid">
-            {ARTIST_DATA.discography.eps.map((ep, index) => (
-              <div 
-                key={index} 
-                className="album-card animate-fadeInUp" 
-                style={{ animationDelay: `${index * 0.1}s` }}
-                data-testid={`ep-card-${index}`}
-              >
-                <p className="album-type">EP</p>
-                <p className="album-year">{ep.year}</p>
-                <h4 className="album-title">{ep.title}</h4>
-                <p className="album-artist">{ep.artist}</p>
-              </div>
-            ))}
+            <AlbumCard type="EP" year="2014" title="Amare non basta mai" artist="Strike The Head" index={0} />
+            <AlbumCard type="EP" year="2010" title="Disturbi del sonno" artist="Strike The Head" index={1} />
           </div>
         </div>
       </div>
@@ -252,16 +236,18 @@ const DiscographySection = () => {
 
 // Footer Section
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="footer" data-testid="footer">
       <div className="container">
         <h2 className="font-heading text-4xl md:text-5xl uppercase mb-8">
-          {ARTIST_DATA.name}
+          {artistName}
         </h2>
         
         <div className="flex justify-center gap-4 mb-8" data-testid="social-links">
           <a 
-            href={ARTIST_DATA.socials.instagram} 
+            href={socialInstagram} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="social-link"
@@ -271,7 +257,7 @@ const Footer = () => {
             <Instagram size={20} />
           </a>
           <a 
-            href={ARTIST_DATA.socials.youtube} 
+            href={socialYoutube} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="social-link"
@@ -281,7 +267,7 @@ const Footer = () => {
             <Youtube size={20} />
           </a>
           <a 
-            href={ARTIST_DATA.socials.spotify} 
+            href={socialSpotify} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="social-link"
@@ -291,7 +277,7 @@ const Footer = () => {
             <Music2 size={20} />
           </a>
           <a 
-            href={ARTIST_DATA.socials.facebook} 
+            href={socialFacebook} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="social-link"
@@ -303,7 +289,7 @@ const Footer = () => {
         </div>
 
         <p className="text-sm text-zinc-500">
-          © {new Date().getFullYear()} STRIKE THE HEAD. ALL RIGHTS RESERVED.
+          © {currentYear} STRIKE THE HEAD. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>
