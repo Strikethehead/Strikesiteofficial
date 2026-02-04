@@ -12,6 +12,16 @@ const socialYoutube = "https://www.youtube.com/@striketheheadofficial";
 const socialSpotify = "https://open.spotify.com/intl-it/artist/73z0OCKr558bQfMGcA2kIv?si=iKTIsQLTS6yw1cekv_obHw";
 const socialFacebook = "https://www.facebook.com/striketheheadofficial";
 
+const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/frvvfz33_strike%20the%20head%20spotify.jpg";
+
+const livePerformances = [
+  { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
+  { year: "2023", event: "Diamanti Grezzi Tour", location: "Italia" },
+  { year: "2015", event: "Documentario RAI 'I GIGANTI'", location: "Italia" },
+  { year: "2014", event: "UNTI E BISUNTI 2 - D-MAX", location: "Italia" },
+  { year: "2005", event: "Music & Movie - SKY TV", location: "Italia" }
+];
+
 const biographyText = `Sulla scena dal 1998, membro di Zulu Nation Italia e della Gatekeepaz crew. Artista indipendente di B.M.records, OneDayLabel e KOF97.
 
 Viene notato nel 2002 su ERMAGEDDON di Erma stampato da Vitaminic, nel 2003 DJ MESTA lo inserisce in INVASIONE MIXTAPE vol.1 con il suo gruppo di allora le "Menti Folli" insieme a Kyosho, nel 2004 fa parte della compilation "HIP HOP UNITED a european Hip-Hop compilation", distribuito da FAT BEATS nei Paesi Bassi.
@@ -64,6 +74,9 @@ const Navbar = () => {
           <a href="#discografia" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-discografia">
             Discografia
           </a>
+          <a href="#live" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-live">
+            Live
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <a href={socialInstagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
@@ -84,7 +97,7 @@ const HeroSection = () => {
     <section id="home" className="hero-section" data-testid="hero-section">
       <div 
         className="hero-bg"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1703764885259-d77c1a2b9c74?q=80&w=2070&auto=format&fit=crop')` }}
+        style={{ backgroundImage: `url('${heroImage}')` }}
       />
       <div className="hero-overlay" />
       
@@ -234,6 +247,42 @@ const DiscographySection = () => {
   );
 };
 
+// Live Section
+const LiveSection = () => {
+  return (
+    <section id="live" className="section" style={{ background: "#0A0A0A" }} data-testid="live-section">
+      <div className="container">
+        <h2 className="section-title animate-fadeInUp">Live</h2>
+        <p className="text-zinc-400 mb-8 max-w-2xl">
+          Apparizioni televisive, performance dal vivo e collaborazioni internazionali
+        </p>
+        
+        <div className="space-y-4" data-testid="live-list">
+          {livePerformances.map((perf, index) => (
+            <div 
+              key={index}
+              className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 p-4 border border-white/5 hover:border-[#D4AF37]/50 transition-colors duration-300 animate-fadeInUp"
+              style={{ animationDelay: `${index * 0.1}s` }}
+              data-testid={`live-item-${index}`}
+            >
+              <span className="text-[#D4AF37] font-bold text-lg md:w-20">{perf.year}</span>
+              <span className="font-heading text-xl md:text-2xl uppercase flex-1">{perf.event}</span>
+              <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 p-6 border border-[#D4AF37]/30 bg-[#D4AF37]/5">
+          <p className="text-sm tracking-widest uppercase text-[#D4AF37] mb-2">Booking & Collaborazioni</p>
+          <p className="text-zinc-400">
+            Per richieste di booking, interviste o collaborazioni, contattare attraverso i social media ufficiali.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Footer Section
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -306,6 +355,7 @@ function App() {
       <VideoSection />
       <BioSection />
       <DiscographySection />
+      <LiveSection />
       <Footer />
     </div>
   );
