@@ -175,7 +175,7 @@ const BioSection = () => {
         <div className="bio-section">
           <div className="bio-image animate-slideInLeft" data-testid="bio-image">
             <img 
-              src="https://images.unsplash.com/photo-1701232664498-b58a07d80001?q=80&w=1974&auto=format&fit=crop" 
+              src="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/tv18cl41_photo_2026-01-08_21-58-15.jpg" 
               alt="Strike The Head"
             />
           </div>
