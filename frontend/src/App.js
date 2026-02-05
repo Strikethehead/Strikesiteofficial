@@ -34,17 +34,21 @@ Nel 2010 viene interamente prodotto dallo spagnolo Bustaphort realizzando l'EP "
 
 Nel 2011 realizza insieme a Coolkitz un album scritto e registrato in 24 ore "OneDayMaking" e nel 2012 entra nella compilation "4MYPEOPLE vol.1" in allegato a WEGOTFLAVA, Magazine di cui è anche redattore.
 
-Nel 2013 DJ Jad (Articolo 31) realizza per Strike gli scratch di "Inmortal" inserita nel disco "Tridream state" omaggio a Nujabes prodotto dal team spagnolo G.SOUL (Bustaphort & Arlan) e nel 2014 la collaborazione con "il Sarto" continua nel singolo "UPPERGROUND" prodotto proprio da DJ JAD. Lo stesso anno compare nel programma televisivo "UNTI E BISUNTI 2" su D-MAX.
+Nel 2013 dopo l'uscita dell'EP "Amare non basta mai", DJ Jad (Articolo 31) realizza per Strike gli scratch di "Inmortal" inserita nel disco "Tridream state" omaggio a Nujabes prodotto dal team spagnolo G.SOUL (Bustaphort & Arlan).
+
+Nel 2014 la collaborazione con "il Sarto" continua nel singolo "UPPERGROUND" prodotto proprio da DJ JAD. Lo stesso anno compare nel programma televisivo "UNTI E BISUNTI 2" su D-MAX. Sempre nel 2014 forma insieme a Dragwan il duo "Manifesto" che li porterà ad un'unica pubblicazione, un doppio singolo in Vinile prodotto da Lefty (Leftside) per B.M.records dal titolo "Seriamente/Il tuo obiettivo è il sole".
 
 Nel 2015 compare nel documentario RAI "I GIGANTI" e finisce su Billboard USA con il progetto #HIPHOPISHIPHOP brano internazionale realizzato per l'UNICEF dal koreano San-E a cui prende parte anche la leggenda KRS-One.
 
 Le collaborazioni internazionali proseguono con Mr Phormula nell'album "LLWYBRAU" in Galles, e con Emcee M in Polonia con "Internationall Hip-Hop" a cui prende parte anche Donald D e molti altri artisti da varie parti del Mondo.
 
+Nel 2016 pubblica il doppio singolo "Incisa sulla pietra/Equilibri" 2 brani prodotti da Ice One.
+
 Nel 2017 l'indonesiano Rand Slam lo chiama a partecipare nel suo disco "RIMAJINASI" premiato come miglior album Hip-Hop di quell'anno su Rolling Stone Indonesia.
 
-Nel 2023 torna a fare dischi insieme a Coolkitz con "Diamanti Grezzi" un disco dalle sonorità Golden Age, che è stato passato in Radio FM anche in Francia, Inghilterra e Galles.
+Nel 2023 a distanza di 10 anni dall'ultima pubblicazione torna a fare dischi insieme a Coolkitz con "Diamanti Grezzi" un disco dalle sonorità Golden Age, accolto molto positivamente dalla critica, nonostante si discosti dal trend musicale del momento, ottiene passaggi importanti in Radio FM in Francia, Inghilterra e Galles, oltre ad alcune piccole realtà in Italia.
 
-Nel 2025 Strike collabora nuovamente con MR PHORMULA e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.
+Nel 2025 Strike collabora nuovamente con MR PHORMULA nel brano "Cymru i'r Eidal (Dal Galles all'Italia)" e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.
 
 Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.`;
 
