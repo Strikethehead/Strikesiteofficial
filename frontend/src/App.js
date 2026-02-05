@@ -350,27 +350,30 @@ const CollaborationsSection = () => {
         </p>
         
         <div className="space-y-2" data-testid="collaborations-list">
-          {collaborationsData.map((yearData) => (
-            <div key={yearData.year} className="border border-white/5 hover:border-[#D4AF37]/30 transition-colors duration-300">
-              <button
-                onClick={() => setExpandedYear(expandedYear === yearData.year ? null : yearData.year)}
-                className="w-full flex items-center justify-between p-4 text-left"
-                data-testid={`collab-year-${yearData.year}`}
-              >
-                <span className="text-[#D4AF37] font-bold text-xl">{yearData.year}</span>
-                <span className="text-zinc-500 text-sm">{yearData.items.length} collaborazioni</span>
-              </button>
-              {expandedYear === yearData.year && (
-                <div className="px-4 pb-4 space-y-2">
-                  {yearData.items.map((collab, index) => (
-                    <p key={index} className="text-zinc-400 text-sm pl-4 border-l border-[#D4AF37]/30">
-                      {collab}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+          {collabYears.map((year) => {
+            const items = getCollabItems(year);
+            return (
+              <div key={year} className="border border-white/5 hover:border-[#D4AF37]/30 transition-colors duration-300">
+                <button
+                  onClick={() => setExpandedYear(expandedYear === year ? null : year)}
+                  className="w-full flex items-center justify-between p-4 text-left"
+                  data-testid={`collab-year-${year}`}
+                >
+                  <span className="text-[#D4AF37] font-bold text-xl">{year}</span>
+                  <span className="text-zinc-500 text-sm">{items.length} collaborazioni</span>
+                </button>
+                {expandedYear === year && (
+                  <div className="px-4 pb-4 space-y-2">
+                    {items.map((collab, index) => (
+                      <p key={index} className="text-zinc-400 text-sm pl-4 border-l border-[#D4AF37]/30">
+                        {collab}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
