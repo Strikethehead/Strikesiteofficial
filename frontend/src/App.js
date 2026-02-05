@@ -334,6 +334,186 @@ const LiveSection = () => {
   );
 };
 
+// Collaborations Section
+const collaborations = {
+  "2025": [
+    "Mr Phormula \"Cymraeg Worldwide\" (Galles)",
+    "JK \"Astra Aeterna\" (Italy)",
+    "Hanzo Reiza \"Hikki Dojo Freestyle '14\""
+  ],
+  "2024": [
+    "JK \"Supernovae\" (Italy)",
+    "Mastafive \"Euforia Collabo\" (Italy)",
+    "Mastafive & Fabio Musta \"La prima volta\" con Oyoshe & Kenzie (Italy)"
+  ],
+  "2023": [
+    "Simmy Summer \"Chaos\" (Italy)",
+    "Zell Dj \"Serious\" (Italy)"
+  ],
+  "2022": [
+    "Stritti \"Strittmatazz\" (Italy)"
+  ],
+  "2021": [
+    "Aa.vv. Summer Vibes vol.2 – B.M. records",
+    "Stritti \"Fantasy\" (Italy)"
+  ],
+  "2020": [
+    "Strike The Head x Lilym – Il cielo in una stanza (Rmx)",
+    "Aa.vv. Summer Vibes vol.1 – B.M. records",
+    "Al Fo \"I Believe\" (Italy)",
+    "#Unitidalgroove – \"Re senza Trono (Casino Royale Cover)\"",
+    "Viola Ent. \"Torino non è piu' Fiat\" (Italy)",
+    "Stritti \"RiRappresento\" (Italy)"
+  ],
+  "2017": [
+    "Josef K \"No Matter\" (Romania)",
+    "Rand Slam \"Rimajinasi\" (Indonesia) – Def Bloc",
+    "Keep it Real \"Fallo Realmente vol.1\" (Italy)"
+  ],
+  "2016": [
+    "eMCeeM \"International Hip Hop\" (Poland)",
+    "Mr Phormula \"LLWYBRAU\" (Wales)",
+    "Pat \"RapDiecicento\" (Italy)",
+    "Lil bac \"L'invisibile\" (Italy)",
+    "Sparadust \"Boom Balcanic Bap\" (Vinile) (Italy)",
+    "Stritti \"HipHopCorn\" (Italy)"
+  ],
+  "2015": [
+    "San E \"The Boy Who Cried Wolf\" (Cd Version) (South Korea)",
+    "Hip Hop for The World \"#HipHopisHipHop\" – Brand New Music"
+  ],
+  "2014": [
+    "Aa.vv. \"The Movement Mixtape vol.1\" (Italy)",
+    "Dj Seby \"Blackzone Mixtape vol.6\" (Italy)",
+    "Radio Rade & Dj Spark \"Il Progetto Brunovic\" (Italy)",
+    "Aa.vv. \"Original Connection\" mixtape (Italy)",
+    "Manifesto \"Seriamente\" (12\") (Italy)"
+  ],
+  "2013": [
+    "Jap & Paggio \"HipHopcrisia\" – B.M. records – ep (Italy)",
+    "Bustaphort \"Collection: 2006-2012\" vol.1 (Spain)",
+    "Dj Jad \"Cool Tape\" – Mixtape (Italy)",
+    "G-Soul \"Tridream State\" – B.M. records – ep (Spain)",
+    "DragWan \"Lost Traxxx\" (Vinile Limited) (Italy)",
+    "Rikom Carnera \"Il suono della campana\" (Italy)"
+  ],
+  "2012": [
+    "Rico \"HERTZMUSIC\" (Italy)",
+    "Erma \"KUMI\" (Italy)",
+    "Aa.vv. \"4MYPEOPLE vol.1\" (WeGotFlava Magazine) (Italy)"
+  ],
+  "2011": [
+    "Kabin \"CHECKPOINT\" (Hungary)",
+    "7Peccati \"DYNAMIKE 2007\" remaster 2010 (Italy)",
+    "DragWan \"Colpiscimi ep\" (CD + Vinile Limited) (Italy)",
+    "Aa.vv. \"Save HipHop compilation\" (Italy)",
+    "Elfa \"Missantropa\" (Italy)",
+    "Kitz \"Music Paiura\" (Italy)",
+    "Erma \"Regnum Sardiniae\" (Italy)",
+    "El Cebero de la SL \"Fina Estampa\" (Colombia)",
+    "Bolo Creatore \"Golem 2\" (Italy)"
+  ],
+  "2010": [
+    "Ruido & Fame126 \"Zero Cloni Mixtape vol.1\" (Italy)",
+    "El Cebero de la SL \"Tiempo pa Matar\" (Colombia)"
+  ],
+  "2009": [
+    "Aa.vv. \"TrainingDay vol.1\" (Groove Magazine) (Italy)",
+    "Maury B \"One Day\" (raccolta) (Italy)",
+    "Mecom \"La classe delle elementari\" (Italy)",
+    "BabyTraxx \"Babytraxx is James Digger\" (France)",
+    "SupaBeatz prod. \"2 Calci in bocca\" (Italy)"
+  ],
+  "2008": [
+    "Don Stefano \"Diamanti Mixtape\" (Italy)"
+  ],
+  "2007": [
+    "Aa.vv. \"Xmas Compilation vol.2\" (Toast Records/GrigioTorino.it)",
+    "Don Stefanuccio \"Dolce Veleno Mixtapes\" (Italy)"
+  ],
+  "2006": [
+    "Bolo Creatore \"Golem\" (Italy)",
+    "KjNoone \"Brotha Fight\" (Italy)",
+    "21 Grammi \"Orgoglio nazionale\" (Italy)",
+    "Erma \"Ermatico\" (Italy)",
+    "Mas.T \"Rap Games\" (Italy)",
+    "Dhiram Records \"Dhiram Records Street Tape vol.1\" (worldwide)",
+    "Dj Frankie O \"Insoliti Inediti\" (Futuri Possibili) (Italy)"
+  ],
+  "2005": [
+    "Lingo \"S.T.A.W.A.\" (Poland)",
+    "Cisa \"Suonoibrido vol.2\" (Italy)",
+    "Kalafro Sound Power \"Bergamotto Showcase\" (Italy)",
+    "Aa.vv. \"Music & Movie compilation\" (Remida Records/SkyTv)",
+    "Mastafive \"Dammi un beat\" (Italy)"
+  ],
+  "2004": [
+    "Aa.vv. \"Sampler03\" (DaBombMagazine) (Italy)",
+    "Cisa \"Suonoibrido vol.1\" (Italy)",
+    "Aa.vv \"Hip Hop United compilation\" (Nederland)",
+    "Adry \"Va Cosi'\" (Spain)",
+    "Quality Bastard \"Quality Bastard Basement 2000_2004\" (Italy)",
+    "Canebullo \"Solista ma non troppo\" (Italy)",
+    "Izanami \"Con le unghie\" (Italy)"
+  ],
+  "2003": [
+    "Dj Mesta \"Invasione Mixtape vol.1\" (Italy)",
+    "Hiphop&Stop community \"Underground\" (Italy)",
+    "Dabee & Black King \"Nucleo Compatto vol.2\" (Italy)",
+    "Misterkumasca' \"Impronte\" (Italy)"
+  ],
+  "2002": [
+    "Erma \"Ermageddon\" (Italy)",
+    "Quality Bastard \"Cap Tost Mixtape\" (Italy)",
+    "Mikron \"HipHop Next Stop\" (Italy)",
+    "Soprasotto prod. \"SoprasottoClick\" (Italy)",
+    "Dabee \"Nucleo Compatto\" (Italy)"
+  ],
+  "2001": [
+    "Supervirzi Corporation \"Zona Stretta\" (Italy)"
+  ]
+};
+
+const CollaborationsSection = () => {
+  const [expandedYear, setExpandedYear] = useState(null);
+  const years = Object.keys(collaborations).sort((a, b) => b - a);
+
+  return (
+    <section id="collaborazioni" className="section" style={{ background: "#050505" }} data-testid="collaborations-section">
+      <div className="container">
+        <h2 className="section-title animate-fadeInUp">Collaborazioni</h2>
+        <p className="text-zinc-400 mb-8 max-w-2xl">
+          Oltre 20 anni di collaborazioni internazionali con artisti da Italia, Galles, Polonia, Spagna, Francia, Indonesia, Colombia, Ungheria, Romania e Corea del Sud.
+        </p>
+        
+        <div className="space-y-2" data-testid="collaborations-list">
+          {years.map((year) => (
+            <div key={year} className="border border-white/5 hover:border-[#D4AF37]/30 transition-colors duration-300">
+              <button
+                onClick={() => setExpandedYear(expandedYear === year ? null : year)}
+                className="w-full flex items-center justify-between p-4 text-left"
+                data-testid={`collab-year-${year}`}
+              >
+                <span className="text-[#D4AF37] font-bold text-xl">{year}</span>
+                <span className="text-zinc-500 text-sm">{collaborations[year].length} collaborazioni</span>
+              </button>
+              {expandedYear === year && (
+                <div className="px-4 pb-4 space-y-2">
+                  {collaborations[year].map((collab, index) => (
+                    <p key={index} className="text-zinc-400 text-sm pl-4 border-l border-[#D4AF37]/30">
+                      {collab}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Footer Section
 const Footer = () => {
   const currentYear = new Date().getFullYear();
