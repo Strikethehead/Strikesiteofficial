@@ -254,7 +254,7 @@ const DiscographySection = () => {
           <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">EP</h3>
           <div className="discography-grid" data-testid="eps-grid">
             <AlbumCard type="EP" year="2014" title="Amare non basta mai" artist="Strike The Head" index={0} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/ghvrm7f1_amare%20nonbasta.jpg" />
-            <AlbumCard type="EP" year="2010" title="Disturbi del sonno" artist="Strike The Head" index={1} />
+            <AlbumCard type="EP" year="2010" title="Disturbi del sonno" artist="Strike The Head" index={1} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/7ss110iw_distrurbi.jpg" />
           </div>
         </div>
       </div>
