@@ -382,6 +382,65 @@ const LiveSection = () => {
   );
 };
 
+// Interviews Section
+const InterviewsSection = () => {
+  const interviews = [
+    {
+      year: "2026",
+      title: "Intervista Analogica",
+      description: "Strike the Head: \"Più poeti, meno influencer. Il rap è una missione di vita.\"",
+      url: "https://www.nootempo.net/intervista-analogica-strike-the-head-piu-poeti-meno-influencer-il-rap-e-una-missione-di-vita/",
+      source: "Nootempo"
+    },
+    {
+      year: "2024",
+      title: "Podcast / Intervista",
+      description: "Strike The Head - The Block is Hot",
+      url: "https://www.hotblockradio.it/podcastfilter/intervista-strike/?cn-reloaded=1",
+      source: "Hot Block Radio"
+    },
+    {
+      year: "2023",
+      title: "Exxtra Special Interview",
+      description: "Strike The Head racconta il suo album \"Diamanti Grezzi\"",
+      url: "https://www.nootempo.net/exxtra-special-interview-strike-the-head-racconta-il-suo-album-diamanti-grezzi-a-cura-di-valentina-sertini/",
+      source: "Nootempo"
+    }
+  ];
+
+  return (
+    <section id="interviste" className="section" style={{ background: "#0A0A0A" }} data-testid="interviews-section">
+      <div className="container">
+        <h2 className="section-title animate-fadeInUp">Interviste</h2>
+        
+        <div className="space-y-6" data-testid="interviews-list">
+          {interviews.map((interview, index) => (
+            <a
+              key={index}
+              href={interview.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-6 border border-white/5 hover:border-[#D4AF37]/50 bg-[#050505] transition-all duration-300 hover:translate-x-2 animate-fadeInUp"
+              style={{ animationDelay: `${index * 0.1}s` }}
+              data-testid={`interview-${index}`}
+            >
+              <div className="flex flex-col md:flex-row md:items-start gap-4">
+                <span className="text-[#D4AF37] font-bold text-2xl md:w-20">{interview.year}</span>
+                <div className="flex-1">
+                  <p className="text-xs tracking-widest uppercase text-zinc-500 mb-1">{interview.source}</p>
+                  <h3 className="font-heading text-xl md:text-2xl uppercase mb-2">{interview.title}</h3>
+                  <p className="text-zinc-400">{interview.description}</p>
+                </div>
+                <ExternalLink size={20} className="text-zinc-500 hidden md:block" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CollaborationsSection = () => {
   const [expandedYear, setExpandedYear] = useState(null);
 
