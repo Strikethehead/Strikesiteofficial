@@ -17,6 +17,7 @@ const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/a
 
 const livePerformances = [
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
+  { year: "2021", event: "Radio Bianconera - Canale60 (speciale Videogames)", location: "Italia" },
   { year: "2020", event: "We Got Flava - ForMusic Tv", location: "Italia" },
   { year: "2020", event: "GIOVG Videogames Generation - ForMusicTv", location: "Italia" },
   { year: "2017", event: "Happy Hour - Vida Network", location: "Italia" },
