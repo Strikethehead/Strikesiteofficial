@@ -590,6 +590,7 @@ function App() {
       <BioSection />
       <DiscographySection />
       <LiveSection />
+      <CollaborationsSection />
       <Footer />
     </div>
   );
