@@ -8,7 +8,7 @@ export const collabYears = [
 // Collaborations by year
 export const collabItems = {
   "2025": "Mr Phormula - Cymraeg Worldwide (Galles)|JK - Astra Aeterna|Hanzo Reiza - Hikki Dojo Freestyle 14",
-  "2024": "JK - Supernovae|Mastafive - Euforia Collabo|Mastafive & Fabio Musta - La prima volta",
+  "2024": "JK - Supernovae|Mastafive - Euforia Collabo|Mastafive & Fabio Musta - La prima volta|Zell Dj - Clockworks",
   "2023": "Simmy Summer - Chaos|Zell Dj - Serious",
   "2022": "Stritti - Strittmatazz",
   "2021": "Summer Vibes vol.2 B.M. records|Stritti - Fantasy",

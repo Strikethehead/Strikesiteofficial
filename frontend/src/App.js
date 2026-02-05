@@ -17,8 +17,18 @@ const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/a
 
 const livePerformances = [
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
+  { year: "2020", event: "We Got Flava - ForMusic Tv", location: "Italia" },
+  { year: "2020", event: "GIOVG Videogames Generation - ForMusicTv", location: "Italia" },
+  { year: "2017", event: "Happy Hour - Vida Network", location: "Italia" },
+  { year: "2016", event: "Videogames Generation - Vida Network", location: "Italia" },
+  { year: "2015", event: "Torinight - Torinow (speciale Videogames)", location: "Italia" },
   { year: "2015", event: "Documentario RAI 'I GIGANTI'", location: "Italia" },
+  { year: "2014", event: "Videogames Generation - ForMusic Tv", location: "Italia" },
+  { year: "2014", event: "Torinight - Torinow (speciale Videogames)", location: "Italia" },
   { year: "2014", event: "UNTI E BISUNTI 2 - D-MAX", location: "Italia" },
+  { year: "2013", event: "In Da Clip - ForMusic Tv", location: "Italia" },
+  { year: "2007", event: "15' Hip-Hop - Radio City Vercelli", location: "Italia" },
+  { year: "2006", event: "RAPP.IT - RVS Net (Radio Video Scicli FM)", location: "Italia" },
   { year: "2005", event: "Music & Movie - SKY TV", location: "Italia" }
 ];
 
@@ -84,7 +94,7 @@ const Navbar = () => {
             Live
           </a>
           <a href="#collaborazioni" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-collaborazioni">
-            Collab
+            Feat
           </a>
         </div>
         <div className="flex items-center gap-3">
