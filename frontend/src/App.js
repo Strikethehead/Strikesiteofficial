@@ -204,15 +204,6 @@ const VideoSection = () => {
     </section>
   );
 };
-          >
-            Guarda su YouTube
-            <ExternalLink size={14} />
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Biography Section
 const BioSection = () => {
