@@ -338,9 +338,6 @@ const LiveSection = () => {
   );
 };
 
-// Import collaborations data
-import { collaborationsData } from './collaborationsData';
-
 const CollaborationsSection = () => {
   const [expandedYear, setExpandedYear] = useState(null);
 
