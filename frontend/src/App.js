@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "@/App.css";
 import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink } from "lucide-react";
-import { collaborationsData } from './collaborationsData';
+import { collabYears, getCollabItems } from './collaborationsData';
 
 // Artist Data
 const artistName = "STRIKE THE HEAD";
