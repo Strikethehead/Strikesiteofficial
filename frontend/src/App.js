@@ -208,13 +208,22 @@ const BioSection = () => {
 };
 
 // Album Card Component
-const AlbumCard = ({ type, year, title, artist, index }) => {
+const AlbumCard = ({ type, year, title, artist, index, coverImage }) => {
   return (
     <div 
       className="album-card animate-fadeInUp" 
       style={{ animationDelay: `${index * 0.1}s` }}
       data-testid={`album-card-${index}`}
     >
+      {coverImage && (
+        <div className="album-cover mb-4">
+          <img 
+            src={coverImage} 
+            alt={title} 
+            className="w-full aspect-square object-cover"
+          />
+        </div>
+      )}
       <p className="album-type">{type}</p>
       <p className="album-year">{year}</p>
       <h4 className="album-title">{title}</h4>
