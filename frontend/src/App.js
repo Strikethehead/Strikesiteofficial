@@ -82,6 +82,9 @@ const Navbar = () => {
           <a href="#live" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-live">
             Live
           </a>
+          <a href="#collaborazioni" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-collaborazioni">
+            Collab
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <a href={socialInstagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
