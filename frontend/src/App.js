@@ -102,6 +102,9 @@ const Navbar = () => {
           <a href={socialInstagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
             <Instagram size={18} />
           </a>
+          <a href={socialYoutube} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-youtube">
+            <Youtube size={18} />
+          </a>
           <a href={socialSpotify} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-spotify">
             <Music2 size={18} />
           </a>
