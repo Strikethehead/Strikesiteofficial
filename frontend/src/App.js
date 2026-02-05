@@ -137,12 +137,24 @@ const HeroSection = () => {
 };
 
 // Video Section
+const allVideos = [
+  { id: "4cwdmZ2DHP0", title: "Video Principale" },
+  { id: "8NTZ1YgvJkA", title: "Video 2" },
+  { id: "GiVM_d82_CQ", title: "Video 3" },
+  { id: "k5VU2Q7AOck", title: "Video 4" },
+  { id: "Jd8M_jyVVG0", title: "Video 5" },
+  { id: "neZvbC2yqnY", title: "Video 6" },
+  { id: "hjd9x8Yv2kg", title: "Video 7" }
+];
+
 const VideoSection = () => {
   return (
     <section id="video" className="section" style={{ background: "#050505" }} data-testid="video-section">
       <div className="container">
-        <h2 className="section-title animate-fadeInUp">Ultimo Video</h2>
-        <div className="video-container animate-fadeInUp" style={{ animationDelay: "0.2s" }} data-testid="video-container">
+        <h2 className="section-title animate-fadeInUp">Video</h2>
+        
+        {/* Video principale */}
+        <div className="video-container animate-fadeInUp mb-12" style={{ animationDelay: "0.2s" }} data-testid="video-container">
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
             title="Strike The Head - Ultimo Video"
@@ -151,13 +163,47 @@ const VideoSection = () => {
             allowFullScreen
           />
         </div>
+
+        {/* Altri video */}
+        <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">Altri Video</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="video-grid">
+          {allVideos.slice(1).map((video, index) => (
+            <div 
+              key={video.id}
+              className="video-thumb animate-fadeInUp"
+              style={{ animationDelay: `${(index + 1) * 0.1}s` }}
+              data-testid={`video-thumb-${index}`}
+            >
+              <div className="aspect-video border border-white/10 hover:border-[#D4AF37]/50 transition-colors duration-300 overflow-hidden">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="mt-8 text-center">
           <a 
-            href={`https://www.youtube.com/watch?v=${videoId}`}
+            href={socialYoutube}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm tracking-widest uppercase text-zinc-400 hover:text-[#D4AF37] transition-colors duration-300"
             data-testid="youtube-link"
+          >
+            Vedi tutti i video su YouTube
+            <ExternalLink size={14} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
           >
             Guarda su YouTube
             <ExternalLink size={14} />
