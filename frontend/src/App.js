@@ -244,7 +244,7 @@ const DiscographySection = () => {
           <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">Album</h3>
           <div className="discography-grid" data-testid="albums-grid">
             <AlbumCard type="Album" year="2023" title="Diamanti Grezzi" artist="Coolkitz & Strike The Head" index={0} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/8lhm3038_diamanti%20grezzi%20cover.jpg" />
-            <AlbumCard type="Album" year="2011" title="One Day Making" artist="Coolkitz & Strike The Head" index={1} />
+            <AlbumCard type="Album" year="2011" title="One Day Making" artist="Coolkitz & Strike The Head" index={1} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/a3509u61_onedaymaking.jpg" />
             <AlbumCard type="Album" year="2007" title="Prima di dormire" artist="Strike The Head" index={2} />
           </div>
         </div>
