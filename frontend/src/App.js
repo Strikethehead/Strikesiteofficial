@@ -556,6 +556,7 @@ function App() {
       <BioSection />
       <DiscographySection />
       <LiveSection />
+      <InterviewsSection />
       <CollaborationsSection />
       <Footer />
     </div>
