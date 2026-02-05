@@ -5,7 +5,7 @@ import { collabYears, getCollabItems } from './collaborationsData';
 
 // Artist Data
 const artistName = "STRIKE THE HEAD";
-const artistTagline = "SULLA SCENA DAL 1998";
+const artistTagline = "HIP-HOP HEAD DAL 1998";
 const videoId = "4cwdmZ2DHP0";
 
 const socialInstagram = "https://www.instagram.com/strikethehead/";
@@ -93,6 +93,9 @@ const Navbar = () => {
           </a>
           <a href="#live" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-live">
             Live
+          </a>
+          <a href="#interviste" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-interviste">
+            Press
           </a>
           <a href="#collaborazioni" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-collaborazioni">
             Feat
