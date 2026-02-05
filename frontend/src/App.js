@@ -262,13 +262,9 @@ const BioSection = () => {
 };
 
 // Album Card Component
-const AlbumCard = ({ type, year, title, artist, index, coverImage }) => {
-  return (
-    <div 
-      className="album-card animate-fadeInUp" 
-      style={{ animationDelay: `${index * 0.1}s` }}
-      data-testid={`album-card-${index}`}
-    >
+const AlbumCard = ({ type, year, title, artist, index, coverImage, spotifyUrl }) => {
+  const CardContent = () => (
+    <>
       {coverImage && (
         <div className="album-cover mb-4">
           <img 
@@ -282,6 +278,37 @@ const AlbumCard = ({ type, year, title, artist, index, coverImage }) => {
       <p className="album-year">{year}</p>
       <h4 className="album-title">{title}</h4>
       <p className="album-artist">{artist}</p>
+      {spotifyUrl && (
+        <div className="mt-3 flex items-center gap-2 text-[#1DB954] text-sm">
+          <Music2 size={14} />
+          <span className="tracking-wider uppercase">Ascolta su Spotify</span>
+        </div>
+      )}
+    </>
+  );
+
+  if (spotifyUrl) {
+    return (
+      <a 
+        href={spotifyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="album-card animate-fadeInUp block" 
+        style={{ animationDelay: `${index * 0.1}s` }}
+        data-testid={`album-card-${index}`}
+      >
+        <CardContent />
+      </a>
+    );
+  }
+
+  return (
+    <div 
+      className="album-card animate-fadeInUp" 
+      style={{ animationDelay: `${index * 0.1}s` }}
+      data-testid={`album-card-${index}`}
+    >
+      <CardContent />
     </div>
   );
 };
