@@ -16,7 +16,6 @@ const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/a
 
 const livePerformances = [
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
-  { year: "2023", event: "Diamanti Grezzi Tour", location: "Italia" },
   { year: "2015", event: "Documentario RAI 'I GIGANTI'", location: "Italia" },
   { year: "2014", event: "UNTI E BISUNTI 2 - D-MAX", location: "Italia" },
   { year: "2005", event: "Music & Movie - SKY TV", location: "Italia" }
