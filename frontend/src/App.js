@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import "@/App.css";
-import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink } from "lucide-react";
+import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { collabYears, getCollabItems } from './collaborationsData';
+
+// Live Photos
+const livePhotos = [
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/0ydxkrzu_464457066_8813138925373090_1257347684622435719_n.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/3y6ub32u_597222444_25611513428442376_9105307673946618078_n.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/i1rq9aka_597487243_25611520811774971_7613690537916246776_n.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/ntnhdcdm_597572305_25611520818441637_7686680989760503400_n.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/uniffbax_599627620_25614632388130480_1186560734310494105_n.jpg"
+];
 
 // Artist Data
 const artistName = "STRIKE THE HEAD";
