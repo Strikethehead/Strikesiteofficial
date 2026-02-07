@@ -79,8 +79,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`} data-testid="navbar">
       <div className="container flex items-center justify-between">
-        <a href="#home" className="font-heading text-2xl tracking-wider" data-testid="navbar-logo">
-          STRIKE
+        <a href="#home" className="navbar-logo" data-testid="navbar-logo">
+          <img src="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/y9a6m9b9_strike%20logo%20trasparente%20bianco.png" alt="Strike The Head" className="h-10 md:h-12" />
         </a>
         <div className="hidden md:flex items-center gap-8">
           <a href="#video" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-video">
