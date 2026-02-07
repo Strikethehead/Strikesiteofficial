@@ -432,6 +432,7 @@ const DiscographySection = () => {
 // Live Section
 const LiveSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expandedYear, setExpandedYear] = useState(null);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % livePhotos.length);
@@ -445,6 +446,17 @@ const LiveSection = () => {
     const timer = setInterval(nextSlide, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  // Group performances by year
+  const groupedPerformances = livePerformances.reduce((acc, perf) => {
+    if (!acc[perf.year]) {
+      acc[perf.year] = [];
+    }
+    acc[perf.year].push(perf);
+    return acc;
+  }, {});
+
+  const years = Object.keys(groupedPerformances).sort((a, b) => b - a);
 
   return (
     <section id="live" className="section" style={{ background: "#0A0A0A" }} data-testid="live-section">
@@ -495,19 +507,33 @@ const LiveSection = () => {
           </div>
         </div>
         
-        <div className="space-y-4" data-testid="live-list">
-          {livePerformances.map((perf, index) => (
-            <div 
-              key={index}
-              className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 p-4 border border-white/5 hover:border-[#D4AF37]/50 transition-colors duration-300 animate-fadeInUp"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              data-testid={`live-item-${index}`}
-            >
-              <span className="text-[#D4AF37] font-bold text-lg md:w-20">{perf.year}</span>
-              <span className="font-heading text-xl md:text-2xl uppercase flex-1">{perf.event}</span>
-              <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
-            </div>
-          ))}
+        {/* Grouped by Year */}
+        <div className="space-y-2" data-testid="live-list">
+          {years.map((year) => {
+            const events = groupedPerformances[year];
+            return (
+              <div key={year} className="border border-white/5 hover:border-[#D4AF37]/30 transition-colors duration-300">
+                <button
+                  onClick={() => setExpandedYear(expandedYear === year ? null : year)}
+                  className="w-full flex items-center justify-between p-4 text-left"
+                  data-testid={`live-year-${year}`}
+                >
+                  <span className="text-[#D4AF37] font-bold text-xl">{year}</span>
+                  <span className="text-zinc-500 text-sm">{events.length} {events.length === 1 ? 'evento' : 'eventi'}</span>
+                </button>
+                {expandedYear === year && (
+                  <div className="px-4 pb-4 space-y-2">
+                    {events.map((perf, index) => (
+                      <div key={index} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
+                        <span className="font-heading text-lg uppercase flex-1">{perf.event}</span>
+                        <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-12 p-6 border border-[#D4AF37]/30 bg-[#D4AF37]/5">
