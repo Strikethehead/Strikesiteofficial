@@ -358,6 +358,21 @@ const DiscographySection = () => {
 
 // Live Section
 const LiveSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % livePhotos.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + livePhotos.length) % livePhotos.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="live" className="section" style={{ background: "#0A0A0A" }} data-testid="live-section">
       <div className="container">
@@ -365,6 +380,47 @@ const LiveSection = () => {
         <p className="text-zinc-400 mb-8 max-w-2xl">
           Apparizioni televisive, performance dal vivo e collaborazioni internazionali
         </p>
+
+        {/* Photo Slider */}
+        <div className="relative mb-12 max-w-4xl mx-auto" data-testid="live-slider">
+          <div className="aspect-video overflow-hidden border border-white/10">
+            <img 
+              src={livePhotos[currentSlide]} 
+              alt={`Live photo ${currentSlide + 1}`}
+              className="w-full h-full object-cover transition-opacity duration-500"
+            />
+          </div>
+          
+          {/* Navigation Arrows */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors duration-300"
+            data-testid="slider-prev"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors duration-300"
+            data-testid="slider-next"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {livePhotos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                  index === currentSlide ? 'bg-[#D4AF37]' : 'bg-zinc-600'
+                }`}
+                data-testid={`slider-dot-${index}`}
+              />
+            ))}
+          </div>
+        </div>
         
         <div className="space-y-4" data-testid="live-list">
           {livePerformances.map((perf, index) => (
