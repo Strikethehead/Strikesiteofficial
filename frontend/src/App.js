@@ -11,7 +11,10 @@ const livePhotos = [
   "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/ntnhdcdm_597572305_25611520818441637_7686680989760503400_n.jpg",
   "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/uniffbax_599627620_25614632388130480_1186560734310494105_n.jpg",
   "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/c41jyybt_Strike%20The%20Head%201.jpg",
-  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/da9sghrz_Strike%20The%20Head%202.jpg"
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/da9sghrz_Strike%20The%20Head%202.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/qs3usoti_StrikeTheHead%20RAI.png",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/ic9a7ek5_untiebisunti2.jpg",
+  "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/nw8wuaus_Torinow2.jpg"
 ];
 
 // Artist Data
