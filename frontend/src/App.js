@@ -183,6 +183,9 @@ const Navbar = () => {
           <a href="#collaborazioni" className="text-sm tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-300" data-testid="nav-collaborazioni">
             Feat
           </a>
+          <a href="https://elasticstage.com/onedaylab" target="_blank" rel="noopener noreferrer" className="text-sm tracking-widest uppercase text-[#D4AF37] hover:text-white transition-colors duration-300" data-testid="nav-buy">
+            Buy
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <a href={socialInstagram} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-instagram">
