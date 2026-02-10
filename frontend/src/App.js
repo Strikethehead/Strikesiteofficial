@@ -124,6 +124,8 @@ const livePerformances = [
   { year: "2008", event: "School Tribe", location: "Carmagnola" },
   { year: "2007", event: "15' Hip-Hop - Radio City Vercelli", location: "Italia" },
   { year: "2007", event: "Live", location: "Genova" },
+  { year: "2007", event: "Live", location: "Marina di Pisa" },
+  { year: "2007", event: "Live", location: "Belluno" },
   { year: "2007", event: "Titty Twister", location: "San Benedetto del Tronto" },
   { year: "2006", event: "RAPP.IT - RVS Net (Radio Video Scicli FM)", location: "Italia" },
   { year: "2006", event: "Torino Rap Live", location: "Carmagnola" },
