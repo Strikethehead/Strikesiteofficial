@@ -167,11 +167,11 @@ Nel 2017 l'indonesiano Rand Slam lo chiama a partecipare nel suo disco "RIMAJINA
 
 Nel 2023 a distanza di 10 anni dall'ultima pubblicazione torna a fare dischi insieme a Coolkitz con "Diamanti Grezzi" un disco dalle sonorità Golden Age, accolto molto positivamente dalla critica, nonostante si discosti dal trend musicale del momento, ottiene passaggi importanti in Radio FM in Francia, Inghilterra e Galles, oltre ad alcune piccole realtà in Italia.
 
+Dal 2024 Strike è Dj e Speaker ufficiale della squadra di Calcio CSF CARMAGNOLA QUEEN CAR.
+
 Nel 2025 Strike collabora nuovamente con MR PHORMULA nel brano "Cymru i'r Eidal (Dal Galles all'Italia)" e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.
 
-Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.
-
-Dal 2024 Strike è Dj e Speaker ufficiale della squadra di Calcio CSF CARMAGNOLA QUEEN CAR.`;
+Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.`;
 
 // Navbar Component
 const Navbar = () => {
