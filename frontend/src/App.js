@@ -27,9 +27,12 @@ const socialFacebook = "https://www.facebook.com/striketheheadofficial";
 const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/frvvfz33_strike%20the%20head%20spotify.jpg";
 
 const livePerformances = [
+  { year: "2026", event: "Dj e Speaker Ufficiale CSF CARMAGNOLA QUEEN CAR - Stadio Comunale", location: "Carmagnola" },
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
   { year: "2025", event: "Strike The Head Dj Set AfterParty - Circolo Arci Margot", location: "Carmagnola" },
+  { year: "2025", event: "Dj e Speaker Ufficiale CSF CARMAGNOLA QUEEN CAR - Stadio Comunale", location: "Carmagnola" },
   { year: "2024", event: "I Love Rappone Show your Skillz", location: "Genova" },
+  { year: "2024", event: "Dj e Speaker Ufficiale CSF CARMAGNOLA QUEEN CAR - Stadio Comunale", location: "Carmagnola" },
   { year: "2023", event: "WE GOT FLAVA - Hot Block Radio", location: "Italia" },
   { year: "2023", event: "Presentazione Hot Flava - Shabba", location: "Cantù" },
   { year: "2022", event: "Rap from da Province - Circolo Arci Margot", location: "Carmagnola" },
@@ -50,8 +53,12 @@ const livePerformances = [
   { year: "2017", event: "Cantiere", location: "Milano" },
   { year: "2017", event: "Strike The Head Dj Set - Circolo Arci Margot", location: "Carmagnola" },
   { year: "2017", event: "Gatekeepaz Reunion - Spazio 211", location: "Torino" },
+  { year: "2017", event: "HALLOWEEN PARTY B.M. Records - Red And Black", location: "Asti" },
+  { year: "2017", event: "Live DI ZONA", location: "Fossano" },
   { year: "2016", event: "Videogames Generation - Vida Network", location: "Italia" },
   { year: "2016", event: "Dj Set @ Armonia", location: "Carignano" },
+  { year: "2016", event: "Strike The Head Dj Set - Circolo Arci Margot", location: "Carmagnola" },
+  { year: "2016", event: "Strike The Head Dj Set - La Cina di Wu", location: "Bra" },
   { year: "2015", event: "Torinight - Torinow (speciale Videogames)", location: "Italia" },
   { year: "2015", event: "Documentario RAI 'I GIGANTI'", location: "Italia" },
   { year: "2015", event: "Rock the Bells - Strike The Head Dj Set - Circolo Arci Margot", location: "Carmagnola" },
@@ -111,6 +118,7 @@ const livePerformances = [
   { year: "2004", event: "A Noi Piace L'Hip-Hop", location: "Carmagnola" },
   { year: "2004", event: "Tecniche Perfette - Patchanka", location: "Chieri" },
   { year: "2003", event: "Pagella Rock", location: "Savigliano" },
+  { year: "2003", event: "Pagella Rock", location: "Fossano" },
   { year: "2003", event: "Apertura per i JUNGLE BROTHERS - Hiroshima", location: "Torino" },
   { year: "2003", event: "Tecniche Perfette - Patchanka", location: "Chieri" },
   { year: "1999", event: "Tam-Tam Boum Cha", location: "Carmagnola" }
@@ -144,7 +152,9 @@ Nel 2023 a distanza di 10 anni dall'ultima pubblicazione torna a fare dischi ins
 
 Nel 2025 Strike collabora nuovamente con MR PHORMULA nel brano "Cymru i'r Eidal (Dal Galles all'Italia)" e performa live insieme a lui sul canale S4C del famoso network televisivo della BBC.
 
-Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.`;
+Nel 2026 vedrà la luce il nuovo album realizzato insieme a Coolkitz.
+
+Dal 2024 Strike è Dj e Speaker ufficiale della squadra di Calcio CSF CARMAGNOLA QUEEN CAR.`;
 
 // Navbar Component
 const Navbar = () => {
@@ -573,6 +583,27 @@ const InterviewsSection = () => {
       description: "Strike The Head racconta il suo album \"Diamanti Grezzi\"",
       url: "https://www.nootempo.net/exxtra-special-interview-strike-the-head-racconta-il-suo-album-diamanti-grezzi-a-cura-di-valentina-sertini/",
       source: "Nootempo"
+    },
+    {
+      year: "2011",
+      title: "Recensione One Day Making",
+      description: "Coolkitz & Strike The Head - One Day Making",
+      url: "https://www.rapmaniacz.com/coolkitz-strike-the-head-one-day-making/",
+      source: "Rapmaniacz"
+    },
+    {
+      year: "2007",
+      title: "Recensione Prima di Dormire",
+      description: "Prima di dormire, opera prima per Strike The Head",
+      url: "https://www.lastampa.it/blogs/2007/05/28/news/prima_di_dormire_opera_primaper_strike_the_head-2793374/",
+      source: "La Stampa"
+    },
+    {
+      year: "2007",
+      title: "Recensione Prima di Dormire",
+      description: "Strike The Head - Prima di dormire",
+      url: "https://www.rapmaniacz.com/strike-the-head-prima-di-dormire/",
+      source: "Rapmaniacz"
     }
   ];
 
