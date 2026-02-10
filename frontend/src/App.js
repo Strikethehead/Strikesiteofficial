@@ -77,6 +77,7 @@ const livePerformances = [
   { year: "2015", event: "Grigliata e Dj Set - Circolo Arci Margot", location: "Carmagnola" },
   { year: "2015", event: "Dj Set Aperitivo in console - Circolo Arci Margot", location: "Carmagnola" },
   { year: "2015", event: "Strike The Head DJ Set Hip-Hop & G.Soul - Circolo Arci Margot", location: "Carmagnola" },
+  { year: "2015", event: "Hip-Hop Workshop - Scuola Gianni Rodari", location: "Sant'Ambrogio di Torino" },
   { year: "2014", event: "Videogames Generation - ForMusic Tv", location: "Italia" },
   { year: "2014", event: "Torinight - Torinow (speciale Videogames)", location: "Italia" },
   { year: "2014", event: "UNTI E BISUNTI 2 - D-MAX", location: "Italia" },
