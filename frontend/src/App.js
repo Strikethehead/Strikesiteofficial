@@ -261,6 +261,9 @@ const Navbar = () => {
           <a href={socialSpotify} target="_blank" rel="noopener noreferrer" className="social-link w-10 h-10" data-testid="nav-spotify">
             <Music2 size={18} />
           </a>
+          <a href="https://zulunationitalia.blogspot.com/" target="_blank" rel="noopener noreferrer" data-testid="nav-zulu">
+            <img src="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/6x4jzaon_LOGO%20%20ZULU%20NATION%20ITALIA.png" alt="Zulu Nation Italia" className="h-20 md:h-24" />
+          </a>
         </div>
       </div>
     </nav>
