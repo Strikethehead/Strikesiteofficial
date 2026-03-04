@@ -7,6 +7,7 @@ export const collabYears = [
 
 // Collaborations by year
 export const collabItems = {
+  "2026": "Quilo Sa Razza - Come Sun Tzu",
   "2025": "Mr Phormula - Cymraeg Worldwide (Galles)|JK - Astra Aeterna|Hanzo Reiza - Hikki Dojo Freestyle 14",
   "2024": "JK - Supernovae|Mastafive - Euforia Collabo|Mastafive & Fabio Musta - La prima volta|Zell Dj - Clockworks",
   "2023": "Simmy Summer - Chaos|Zell Dj - Serious",
