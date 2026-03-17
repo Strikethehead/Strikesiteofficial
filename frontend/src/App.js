@@ -317,7 +317,8 @@ const allVideos = [
   { id: "k5VU2Q7AOck", title: "Video 4" },
   { id: "Jd8M_jyVVG0", title: "Video 5" },
   { id: "neZvbC2yqnY", title: "Video 6" },
-  { id: "hjd9x8Yv2kg", title: "Video 7" }
+  { id: "hjd9x8Yv2kg", title: "Video 7" },
+  { id: "Oqrs_e60Bv4", title: "Video 8" }
 ];
 
 const VideoSection = () => {
