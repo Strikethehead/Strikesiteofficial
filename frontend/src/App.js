@@ -33,6 +33,9 @@ const socialFacebook = "https://www.facebook.com/striketheheadofficial";
 const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/frvvfz33_strike%20the%20head%20spotify.jpg";
 
 const livePerformances = [
+  { year: "2026", event: "CYPHA KINGS - Giuria contest con Mastafive", location: "Bassano del Grappa" },
+  { year: "2026", event: "10 ELEMENTS HIP HOP CAMP ZULU NATION - STRIKE THE HEAD lesson \"Tecniche di scrittura\"", location: "Bassano del Grappa" },
+  { year: "2026", event: "Cena sotto le stelle - ristorante Antefora - STRIKE THE HEAD DJ SET", location: "Pralormo" },
   { year: "2026", event: "Dj e Speaker Ufficiale CSF CARMAGNOLA QUEEN CAR - Stadio Comunale", location: "Carmagnola" },
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
   { year: "2025", event: "Strike The Head Dj Set AfterParty - Circolo Arci Margot", location: "Carmagnola" },
@@ -571,9 +574,9 @@ const LiveSection = () => {
 
           {/* Dots */}
           <div className="flex justify-center gap-2 mt-4">
-            {livePhotos.map((_, index) => (
+            {livePhotos.map((photo, index) => (
               <button
-                key={index}
+                key={photo}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2 h-2 rounded-full transition-colors duration-300 ${
                   index === currentSlide ? 'bg-[#D4AF37]' : 'bg-zinc-600'
@@ -601,7 +604,7 @@ const LiveSection = () => {
                 {expandedYear === year && (
                   <div className="px-4 pb-4 space-y-2">
                     {events.map((perf, index) => (
-                      <div key={`${year}-${perf.event.substring(0, 20)}-${index}`} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
+                      <div key={`${year}-${perf.event}-${perf.location}-${index}`} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
                         <span className="font-heading text-lg uppercase flex-1">{perf.event}</span>
                         <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
                       </div>
