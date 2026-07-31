@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "@/App.css";
 import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { collabYears, getCollabItems } from './collaborationsData';
+
+// Constants
+const SLIDE_INTERVAL_MS = 4000;
 
 // Live Photos
 const livePhotos = [
@@ -297,7 +300,7 @@ const HeroSection = () => {
           data-testid="hero-cta"
         >
           <Play size={18} />
-          Guarda l'ultimo video
+          Guarda l&apos;ultimo video
         </a>
       </div>
 
@@ -403,7 +406,7 @@ const BioSection = () => {
             <h2 className="section-title mb-8" style={{ marginBottom: "2rem" }}>La Storia</h2>
             <div className="text-zinc-400 leading-relaxed space-y-4" data-testid="bio-text">
               {displayBio.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={`bio-paragraph-${index}`}>{paragraph}</p>
               ))}
             </div>
             <button 
@@ -420,32 +423,33 @@ const BioSection = () => {
   );
 };
 
+// Album Card Content Component
+const AlbumCardContent = ({ type, year, title, artist, coverImage, spotifyUrl }) => (
+  <>
+    {coverImage && (
+      <div className="album-cover mb-4">
+        <img 
+          src={coverImage} 
+          alt={title} 
+          className="w-full aspect-square object-cover"
+        />
+      </div>
+    )}
+    <p className="album-type">{type}</p>
+    <p className="album-year">{year}</p>
+    <h4 className="album-title">{title}</h4>
+    <p className="album-artist">{artist}</p>
+    {spotifyUrl && (
+      <div className="mt-3 flex items-center gap-2 text-[#1DB954] text-sm">
+        <Music2 size={14} />
+        <span className="tracking-wider uppercase">Ascolta su Spotify</span>
+      </div>
+    )}
+  </>
+);
+
 // Album Card Component
 const AlbumCard = ({ type, year, title, artist, index, coverImage, spotifyUrl }) => {
-  const CardContent = () => (
-    <>
-      {coverImage && (
-        <div className="album-cover mb-4">
-          <img 
-            src={coverImage} 
-            alt={title} 
-            className="w-full aspect-square object-cover"
-          />
-        </div>
-      )}
-      <p className="album-type">{type}</p>
-      <p className="album-year">{year}</p>
-      <h4 className="album-title">{title}</h4>
-      <p className="album-artist">{artist}</p>
-      {spotifyUrl && (
-        <div className="mt-3 flex items-center gap-2 text-[#1DB954] text-sm">
-          <Music2 size={14} />
-          <span className="tracking-wider uppercase">Ascolta su Spotify</span>
-        </div>
-      )}
-    </>
-  );
-
   if (spotifyUrl) {
     return (
       <a 
@@ -456,7 +460,7 @@ const AlbumCard = ({ type, year, title, artist, index, coverImage, spotifyUrl })
         style={{ animationDelay: `${index * 0.1}s` }}
         data-testid={`album-card-${index}`}
       >
-        <CardContent />
+        <AlbumCardContent type={type} year={year} title={title} artist={artist} coverImage={coverImage} spotifyUrl={spotifyUrl} />
       </a>
     );
   }
@@ -467,7 +471,7 @@ const AlbumCard = ({ type, year, title, artist, index, coverImage, spotifyUrl })
       style={{ animationDelay: `${index * 0.1}s` }}
       data-testid={`album-card-${index}`}
     >
-      <CardContent />
+      <AlbumCardContent type={type} year={year} title={title} artist={artist} coverImage={coverImage} spotifyUrl={spotifyUrl} />
     </div>
   );
 };
@@ -507,18 +511,18 @@ const LiveSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedYear, setExpandedYear] = useState(null);
 
-  const nextSlide = () => {
+  const nextSlide = React.useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % livePhotos.length);
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = React.useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + livePhotos.length) % livePhotos.length);
-  };
+  }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 4000);
+    const timer = setInterval(nextSlide, SLIDE_INTERVAL_MS);
     return () => clearInterval(timer);
-  }, []);
+  }, [nextSlide]);
 
   // Group performances by year
   const groupedPerformances = livePerformances.reduce((acc, perf) => {
@@ -597,7 +601,7 @@ const LiveSection = () => {
                 {expandedYear === year && (
                   <div className="px-4 pb-4 space-y-2">
                     {events.map((perf, index) => (
-                      <div key={index} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
+                      <div key={`${year}-${perf.event.substring(0, 20)}-${index}`} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
                         <span className="font-heading text-lg uppercase flex-1">{perf.event}</span>
                         <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
                       </div>
@@ -680,15 +684,14 @@ const InterviewsSection = () => {
         <h2 className="section-title animate-fadeInUp">Interviste</h2>
         
         <div className="space-y-6" data-testid="interviews-list">
-          {interviews.map((interview, index) => (
+          {interviews.map((interview) => (
             <a
-              key={index}
+              key={`interview-${interview.year}-${interview.source}`}
               href={interview.url}
               target="_blank"
               rel="noopener noreferrer"
               className="block p-6 border border-white/5 hover:border-[#D4AF37]/50 bg-[#050505] transition-all duration-300 hover:translate-x-2 animate-fadeInUp"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              data-testid={`interview-${index}`}
+              data-testid={`interview-${interview.year}-${interview.source}`}
             >
               <div className="flex flex-col md:flex-row md:items-start gap-4">
                 <span className="text-[#D4AF37] font-bold text-2xl md:w-20">{interview.year}</span>
@@ -734,7 +737,7 @@ const CollaborationsSection = () => {
                 {expandedYear === year && (
                   <div className="px-4 pb-4 space-y-2">
                     {items.map((collab, index) => (
-                      <p key={index} className="text-zinc-400 text-sm pl-4 border-l border-[#D4AF37]/30">
+                      <p key={`collab-${year}-${index}`} className="text-zinc-400 text-sm pl-4 border-l border-[#D4AF37]/30">
                         {collab}
                       </p>
                     ))}
