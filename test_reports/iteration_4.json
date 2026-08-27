@@ -1,0 +1,31 @@
+{
+  "summary": "Frontend-only testing of LiveSection 2026 changes on the public URL (desktop 1920x1080 + mobile 390x844). Verified: 2026 header shows '8 eventi' and all 8 events render; the 4 new September events (COMICS STREET 2, BUSCA COMICS, IO STO CON VALE, DJ SET festa privata) are visible; the CSF Carmagnola event is styled in gold (rgb(212,175,55)), has an ExternalLink icon, is clickable via data-testid='csf-event-button' and opens data-testid='csf-modal' with the calendar image loading successfully (naturalWidth>0). Backdrop click closes the modal correctly and clicking the image does not close it. FAILURE: the modal close button (X) is unclickable on both desktop and mobile because the fixed navbar (z-index 100) overlays the modal (z-index 50).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "LiveSection CSF Calendar Modal", "issue": "Close (X) button cannot be clicked. Modal overlay uses z-50 while .navbar uses z-index:100, so the navbar (e.g. nav-youtube link) intercepts pointer events at the X position (rect top ~70px desktop, ~84px mobile). Playwright normal click times out; even a forced click lands on the navbar link instead of closing the modal. Same on mobile. Fix: raise modal z-index above the navbar (e.g. z-[200]) and/or hide navbar while modal is open; also consider positioning the X fixed relative to the viewport so it stays reachable when the tall image scrolls.", "selector": "[data-testid=\"csf-modal-close\"]", "priority": "HIGH"},
+      {"component": "CSF Calendar Modal", "issue": "Top portion of the calendar image is hidden behind the fixed navbar (image starts under the 145px-tall navbar on desktop / behind the mobile header), so the flyer header is partially unreadable.", "selector": "[data-testid=\"csf-modal\"] img", "priority": "MEDIUM"},
+      {"component": "CSF Calendar Modal", "issue": "Escape key does not close the modal and page body scroll is not locked while the modal is open (a11y/UX polish).", "selector": "[data-testid=\"csf-modal\"]", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Live 2026 section", "issues": ["No visual issues found; gold highlight + external-link icon on the CSF row reads clearly against the dark background."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Increase CSF modal z-index above the navbar (navbar z-index=100) so [data-testid='csf-modal-close'] is clickable on desktop and mobile",
+    "Prevent the navbar from covering the modal image top (hide navbar when modal is open or add top padding/fixed close button)",
+    "Optional: close modal on Escape and lock body scroll while open"
+  ],
+  "critical_code_review_comments": [
+    "App.js line ~651: modal container className uses 'z-50' but the site navbar CSS z-index is 100 — modal is rendered below the navbar, breaking the close control. Also the modal is rendered inside the section rather than a portal, which makes stacking-context issues likely."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not tested", "frontend": "80%"},
+  "seed_data_creation": "none",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Live 2026 content (8 events, 4 new September events, gold CSF row, modal open + backdrop close + image load) all verified working. Only remaining defect is the modal X button blocked by the navbar z-index; retest [data-testid='csf-modal-close'] with a normal (non-forced) Playwright click after the fix.",
+  "rca_of_the_issue": "Root cause: stacking order. .navbar has z-index:100 (App.css) while the CSF modal overlay is Tailwind z-50 -> navbar paints above the modal and intercepts pointer events over the X button region (verified via document.elementFromPoint returning data-testid='nav-youtube'). Reproduction: open Live > 2026 > click CSF event > try to click X."
+}
