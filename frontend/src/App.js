@@ -36,13 +36,13 @@ const heroImage = "https://customer-assets.emergentagent.com/job_beat-maker-75/a
 const csfCalendarImage = "https://customer-assets-4nw71qhi.emergentagent.net/job_fe33a626-ca8c-49fb-b337-f6c7f76dd4b2/artifacts/5z6tufx9_DJ%20SET%20CSF%20AGGIORNATI%20.jpg";
 
 const livePerformances = [
-  { year: "2026", event: "STRIKE THE HEAD DJ SET - festa privata", location: "Location privata" },
-  { year: "2026", event: "Live showcase - IO STO CON VALE - evento benefico Fibrosi Cistica - Lavanderie a Vapore", location: "Collegno" },
-  { year: "2026", event: "BUSCA COMICS - con VIDEOGAMES GENERATION", location: "Busca" },
-  { year: "2026", event: "COMICS STREET 2 - con VIDEOGAMES GENERATION / STRIKE THE HEAD - Fiera Nazionale del Peperone", location: "Carmagnola" },
-  { year: "2026", event: "CYPHA KINGS - Giuria contest con Mastafive", location: "Bassano del Grappa" },
-  { year: "2026", event: "10 ELEMENTS HIP HOP CAMP ZULU NATION - STRIKE THE HEAD lesson \"Tecniche di scrittura\"", location: "Bassano del Grappa" },
-  { year: "2026", event: "Cena sotto le stelle - ristorante Antefora - STRIKE THE HEAD DJ SET", location: "Pralormo" },
+  { year: "2026", date: "26 Settembre", event: "STRIKE THE HEAD DJ SET - festa privata", location: "Location privata" },
+  { year: "2026", date: "19 Settembre", event: "Live showcase - IO STO CON VALE - evento benefico Fibrosi Cistica - Lavanderie a Vapore", location: "Collegno" },
+  { year: "2026", date: "13 Settembre", event: "BUSCA COMICS - con VIDEOGAMES GENERATION", location: "Busca" },
+  { year: "2026", date: "5-6 Settembre", event: "COMICS STREET 2 - con VIDEOGAMES GENERATION / STRIKE THE HEAD - Fiera Nazionale del Peperone", location: "Carmagnola" },
+  { year: "2026", date: "26 Luglio", event: "CYPHA KINGS - Giuria contest con Mastafive", location: "Bassano del Grappa" },
+  { year: "2026", date: "25-26 Luglio", event: "10 ELEMENTS HIP HOP CAMP ZULU NATION - STRIKE THE HEAD lesson \"Tecniche di scrittura\"", location: "Bassano del Grappa" },
+  { year: "2026", date: "18 Luglio", event: "Cena sotto le stelle - ristorante Antefora - STRIKE THE HEAD DJ SET", location: "Pralormo" },
   { year: "2026", event: "Dj e Speaker Ufficiale CSF CARMAGNOLA QUEEN CAR - Stadio Comunale", location: "Carmagnola", hasImage: true },
   { year: "2025", event: "BBC S4C - Live con MR PHORMULA", location: "Galles, UK" },
   { year: "2025", event: "Strike The Head Dj Set AfterParty - Circolo Arci Margot", location: "Carmagnola" },
@@ -642,6 +642,9 @@ const LiveSection = () => {
                         </button>
                       ) : (
                         <div key={`${year}-${perf.event}-${perf.location}-${index}`} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
+                          {perf.date && (
+                            <span className="text-[#D4AF37] text-sm font-bold min-w-[100px] md:min-w-[120px]">{perf.date}</span>
+                          )}
                           <span className="font-heading text-lg uppercase flex-1">{perf.event}</span>
                           <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
                         </div>
