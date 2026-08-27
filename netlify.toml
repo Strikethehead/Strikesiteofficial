@@ -1,0 +1,11 @@
+# Netlify configuration for Strikethehead/Strikesiteofficial
+# This tells Netlify that the frontend app lives in the `frontend` directory
+# and how to build and publish it.
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "build"
+
+# Optional: set environment variables here, or add them in Netlify dashboard
+#[build.environment]
+#  NODE_VERSION = "18"
