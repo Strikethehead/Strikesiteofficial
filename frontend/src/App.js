@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import "@/App.css";
 import { Instagram, Youtube, Music2, Facebook, ChevronDown, Play, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { collabYears, getCollabItems } from './collaborationsData';
+import { PhotoSlider, YearAccordion, CsfCalendarModal } from './components/LiveComponents';
 
 // Constants
 const SLIDE_INTERVAL_MS = 4000;
@@ -522,14 +523,15 @@ const LiveSection = () => {
   const [expandedYear, setExpandedYear] = useState(null);
   const [showCsfModal, setShowCsfModal] = useState(false);
 
-  const nextSlide = React.useCallback(() => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % livePhotos.length);
   }, []);
 
-  const prevSlide = React.useCallback(() => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + livePhotos.length) % livePhotos.length);
   }, []);
 
+  // Auto-advance slider
   useEffect(() => {
     const timer = setInterval(nextSlide, SLIDE_INTERVAL_MS);
     return () => clearInterval(timer);
@@ -537,29 +539,32 @@ const LiveSection = () => {
 
   // Handle ESC key and body scroll lock for modal
   useEffect(() => {
-    if (showCsfModal) {
-      document.body.style.overflow = 'hidden';
-      const handleEsc = (e) => {
-        if (e.key === 'Escape') setShowCsfModal(false);
-      };
-      window.addEventListener('keydown', handleEsc);
-      return () => {
-        document.body.style.overflow = '';
-        window.removeEventListener('keydown', handleEsc);
-      };
-    }
+    if (!showCsfModal) return;
+    
+    document.body.style.overflow = 'hidden';
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setShowCsfModal(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+    
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEsc);
+    };
   }, [showCsfModal]);
 
-  // Group performances by year
+  // Group performances by year (memoized calculation)
   const groupedPerformances = livePerformances.reduce((acc, perf) => {
-    if (!acc[perf.year]) {
-      acc[perf.year] = [];
-    }
+    if (!acc[perf.year]) acc[perf.year] = [];
     acc[perf.year].push(perf);
     return acc;
   }, {});
 
   const years = Object.keys(groupedPerformances).sort((a, b) => b - a);
+
+  const handleYearToggle = (year) => {
+    setExpandedYear(expandedYear === year ? null : year);
+  };
 
   return (
     <section id="live" className="section" style={{ background: "#0A0A0A" }} data-testid="live-section">
@@ -569,92 +574,26 @@ const LiveSection = () => {
           Apparizioni televisive, performance dal vivo e collaborazioni internazionali
         </p>
 
-        {/* Photo Slider */}
-        <div className="relative mb-12 max-w-4xl mx-auto" data-testid="live-slider">
-          <div className="aspect-video overflow-hidden border border-white/10">
-            <img 
-              src={livePhotos[currentSlide]} 
-              alt={`Live photo ${currentSlide + 1}`}
-              className="w-full h-full object-cover transition-opacity duration-500"
-            />
-          </div>
-          
-          {/* Navigation Arrows */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors duration-300"
-            data-testid="slider-prev"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/50 hover:bg-[#D4AF37] text-white hover:text-black transition-colors duration-300"
-            data-testid="slider-next"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-4">
-            {livePhotos.map((photo, index) => (
-              <button
-                key={photo}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  index === currentSlide ? 'bg-[#D4AF37]' : 'bg-zinc-600'
-                }`}
-                data-testid={`slider-dot-${index}`}
-              />
-            ))}
-          </div>
-        </div>
+        <PhotoSlider 
+          photos={livePhotos}
+          currentSlide={currentSlide}
+          setCurrentSlide={setCurrentSlide}
+          onPrev={prevSlide}
+          onNext={nextSlide}
+        />
         
         {/* Grouped by Year */}
         <div className="space-y-2" data-testid="live-list">
-          {years.map((year) => {
-            const events = groupedPerformances[year];
-            return (
-              <div key={year} className="border border-white/5 hover:border-[#D4AF37]/30 transition-colors duration-300">
-                <button
-                  onClick={() => setExpandedYear(expandedYear === year ? null : year)}
-                  className="w-full flex items-center justify-between p-4 text-left"
-                  data-testid={`live-year-${year}`}
-                >
-                  <span className="text-[#D4AF37] font-bold text-xl">{year}</span>
-                  <span className="text-zinc-500 text-sm">{events.length} {events.length === 1 ? 'evento' : 'eventi'}</span>
-                </button>
-                {expandedYear === year && (
-                  <div className="px-4 pb-4 space-y-2">
-                    {events.map((perf, index) => (
-                      perf.hasImage ? (
-                        <button
-                          key={`${year}-${perf.event}-${perf.location}-${index}`}
-                          onClick={() => setShowCsfModal(true)}
-                          className="w-full flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2 text-left hover:bg-[#D4AF37]/10 transition-colors duration-300 cursor-pointer"
-                          data-testid="csf-event-button"
-                        >
-                          <span className="font-heading text-lg uppercase flex-1 text-[#D4AF37]">{perf.event}</span>
-                          <span className="text-zinc-400 text-sm tracking-widest uppercase flex items-center gap-2">
-                            {perf.location}
-                            <ExternalLink size={14} className="text-[#D4AF37]" />
-                          </span>
-                        </button>
-                      ) : (
-                        <div key={`${year}-${perf.event}-${perf.location}-${index}`} className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pl-4 border-l border-[#D4AF37]/30 py-2">
-                          {perf.date && (
-                            <span className="text-[#D4AF37] text-sm font-bold min-w-[100px] md:min-w-[120px]">{perf.date}</span>
-                          )}
-                          <span className="font-heading text-lg uppercase flex-1">{perf.event}</span>
-                          <span className="text-zinc-500 text-sm tracking-widest uppercase">{perf.location}</span>
-                        </div>
-                      )
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {years.map((year) => (
+            <YearAccordion
+              key={year}
+              year={year}
+              events={groupedPerformances[year]}
+              isExpanded={expandedYear === year}
+              onToggle={() => handleYearToggle(year)}
+              onEventClick={() => setShowCsfModal(true)}
+            />
+          ))}
         </div>
 
         <div className="mt-12 p-6 border border-[#D4AF37]/30 bg-[#D4AF37]/5">
@@ -665,30 +604,11 @@ const LiveSection = () => {
         </div>
       </div>
 
-      {/* CSF Calendar Modal */}
-      {showCsfModal && (
-        <div 
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/90"
-          onClick={() => setShowCsfModal(false)}
-          data-testid="csf-modal"
-        >
-          <div className="relative max-w-4xl max-h-[90vh] overflow-auto mt-20 md:mt-0">
-            <button
-              onClick={() => setShowCsfModal(false)}
-              className="fixed top-24 md:top-8 right-8 w-12 h-12 flex items-center justify-center bg-[#D4AF37] text-black hover:bg-white transition-colors duration-300 z-[201] text-xl font-bold"
-              data-testid="csf-modal-close"
-            >
-              ✕
-            </button>
-            <img 
-              src={csfCalendarImage} 
-              alt="CSF Carmagnola - Calendario DJ Set" 
-              className="w-full h-auto"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
+      <CsfCalendarModal 
+        isOpen={showCsfModal}
+        onClose={() => setShowCsfModal(false)}
+        imageUrl={csfCalendarImage}
+      />
     </section>
   );
 };
