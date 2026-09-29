@@ -51,6 +51,10 @@ Sito promozionale per artista Hip-Hop "Strike The Head" con video YouTube in hom
 - [x] Extracted magic number 4000 to SLIDE_INTERVAL_MS constant
 - [x] Extracted CardContent as separate AlbumCardContent component
 - [x] Fixed unescaped apostrophe in Hero CTA
+- [x] Refactored LiveSection: extracted PhotoSlider, YearAccordion, CsfCalendarModal to /components/LiveComponents.jsx
+- [x] Added type hints to backend server.py (100% coverage)
+- [x] Fixed collaborations pluralization (collaborazione/collaborazioni)
+- [x] Date specifiche aggiunte agli eventi Live 2026
 
 ## Prioritized Backlog
 

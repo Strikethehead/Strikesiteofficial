@@ -1,0 +1,25 @@
+{
+  "summary": "Frontend regression testing after refactor (LiveSection split into PhotoSlider/YearAccordion/CsfCalendarModal + type hints on backend). All 6 requested features verified on desktop 1920x1080 via public URL. Homepage loads with all sections (navbar, hero, video, bio, discography, live, interviews, collaborations, footer). Live 2026 shows exactly '8 eventi' with all 7 date strings visible (18 Luglio, 25-26 Luglio, 26 Luglio, 5-6 Settembre, 13 Settembre, 19 Settembre, 26 Settembre). PhotoSlider auto-advances (4s interval) and prev/next arrows work. CSF Carmagnola event opens modal; the previous iteration_4 close-button z-index bug is FIXED (modal now z-[200], close X clickable without force). ESC closes modal, backdrop click closes modal, body scroll lock ('overflow: hidden') applied while open. Collaborations accordion expands/collapses correctly. No console errors (only benign 'No available adapters' YouTube warnings).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "CollaborationsSection", "issues": ["Minor i18n polish: label always renders '{n} collaborazioni' even when n==1 (e.g. '1 collaborazioni' for 2026/2022). YearAccordion in LiveSection already pluralizes ('evento'/'eventi'); apply the same to collab section for consistency."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "App.js is 825 lines - exceeds 700-line guideline. Consider splitting sections (HeroSection, VideoSection, BioSection, DiscographySection, InterviewsSection, CollaborationsSection, Footer, and the livePerformances/biographyText data) into separate files under /components and /data. Refactor of LiveSection was well done and can be replicated.",
+    "livePerformances array (~155 items) and biographyText are inlined in App.js; move to /data for maintainability and to reduce bundle-parse cost on the main module.",
+    "LiveSection.groupedPerformances is recomputed on every render (155-item reduce). Wrap in useMemo since livePerformances is a module-level constant.",
+    "CollaborationsSection pluralization inconsistency ('1 collaborazioni'). Use events.length === 1 ? 'collaborazione' : 'collaborazioni'."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not tested", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All 6 features from the review request pass on desktop. Refactor to LiveComponents.jsx is clean and the iteration_4 modal z-index bug is fixed (z-[200], ESC handler, body scroll lock all working). Only outstanding non-blocking items are code-quality suggestions: App.js size, useMemo for grouping, and collaborations pluralization polish."
+}

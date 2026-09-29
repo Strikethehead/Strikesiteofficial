@@ -721,7 +721,7 @@ const CollaborationsSection = () => {
                   data-testid={`collab-year-${year}`}
                 >
                   <span className="text-[#D4AF37] font-bold text-xl">{year}</span>
-                  <span className="text-zinc-500 text-sm">{items.length} collaborazioni</span>
+                  <span className="text-zinc-500 text-sm">{items.length} {items.length === 1 ? 'collaborazione' : 'collaborazioni'}</span>
                 </button>
                 {expandedYear === year && (
                   <div className="px-4 pb-4 space-y-2">
