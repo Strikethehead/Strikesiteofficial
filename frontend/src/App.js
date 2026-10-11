@@ -499,7 +499,7 @@ const DiscographySection = () => {
           <h3 className="text-sm tracking-[0.2em] uppercase text-[#D4AF37] mb-6">Album</h3>
           <div className="discography-grid" data-testid="albums-grid">
             <AlbumCard type="Album" year="2023" title="Diamanti Grezzi" artist="Coolkitz & Strike The Head" index={0} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/8lhm3038_diamanti%20grezzi%20cover.jpg" spotifyUrl="https://open.spotify.com/intl-it/album/6jGFW5k7IkdKY4aIBQ6YnK" />
-            <AlbumCard type="Album" year="2011" title="One Day Making" artist="Coolkitz & Strike The Head" index={1} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/a3509u61_onedaymaking.jpg" spotifyUrl="https://open.spotify.com/intl-it/album/6FBR1p0kFiLRrm1VI0hBx9" />
+            <AlbumCard type="Album" year="2011" title="One Day Making" artist="Coolkitz & Strike The Head" index={1} coverImage="https://customer-assets-4nw71qhi.emergentagent.net/job_fe33a626-ca8c-49fb-b337-f6c7f76dd4b2/artifacts/bcdc715a88da0247_a1397505090_10.jpg" spotifyUrl="https://open.spotify.com/intl-it/album/6FBR1p0kFiLRrm1VI0hBx9" />
             <AlbumCard type="Album" year="2007" title="Prima di dormire" artist="Strike The Head" index={2} coverImage="https://customer-assets.emergentagent.com/job_beat-maker-75/artifacts/vklrfe08_StrikeTheHeadPrimadidormire.jpg" spotifyUrl="https://open.spotify.com/intl-it/album/0C2gD9a5g9ESgsfDcW28Rr" />
           </div>
         </div>
