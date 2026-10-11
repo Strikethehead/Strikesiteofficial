@@ -326,12 +326,12 @@ const HeroSection = () => {
 // Video Section
 const allVideos = [
   { id: "4cwdmZ2DHP0", title: "Video Principale" },
-  { id: "OWIu6YI6PKc", title: "Video 2" },
-  { id: "Oqrs_e60Bv4", title: "Video 3" },
-  { id: "GiVM_d82_CQ", title: "Video 4" },
-  { id: "rZGx5_nYFM0", title: "Video 5" },
-  { id: "8NTZ1YgvJkA", title: "Video 6" },
-  { id: "k5VU2Q7AOck", title: "Video 7" },
+  { id: "OWIu6YI6PKc", title: "SOLO PER QUESTO" },
+  { id: "Oqrs_e60Bv4", title: "Come Sun Tzu" },
+  { id: "8NTZ1YgvJkA", title: "Mr Phormula" },
+  { id: "rZGx5_nYFM0", title: "HRT magazine" },
+  { id: "GiVM_d82_CQ", title: "#RULES" },
+  { id: "k5VU2Q7AOck", title: "#SCRIVOECANCEL" },
   { id: "Jd8M_jyVVG0", title: "Video 8" },
   { id: "neZvbC2yqnY", title: "Video 9" },
   { id: "hjd9x8Yv2kg", title: "Video 10" },
