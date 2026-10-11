@@ -326,15 +326,16 @@ const HeroSection = () => {
 // Video Section
 const allVideos = [
   { id: "4cwdmZ2DHP0", title: "Video Principale" },
-  { id: "Oqrs_e60Bv4", title: "Video 2" },
-  { id: "8NTZ1YgvJkA", title: "Video 3" },
-  { id: "GiVM_d82_CQ", title: "Video 4" },
-  { id: "k5VU2Q7AOck", title: "Video 5" },
-  { id: "Jd8M_jyVVG0", title: "Video 6" },
-  { id: "neZvbC2yqnY", title: "Video 7" },
-  { id: "hjd9x8Yv2kg", title: "Video 8" },
-  { id: "SIdaDt9J5Kw", title: "Video 9" },
-  { id: "p7q-cmht8c4", title: "Video 10" }
+  { id: "OWIu6YI6PKc", title: "Video 2" },
+  { id: "Oqrs_e60Bv4", title: "Video 3" },
+  { id: "8NTZ1YgvJkA", title: "Video 4" },
+  { id: "GiVM_d82_CQ", title: "Video 5" },
+  { id: "k5VU2Q7AOck", title: "Video 6" },
+  { id: "Jd8M_jyVVG0", title: "Video 7" },
+  { id: "neZvbC2yqnY", title: "Video 8" },
+  { id: "hjd9x8Yv2kg", title: "Video 9" },
+  { id: "SIdaDt9J5Kw", title: "Video 10" },
+  { id: "p7q-cmht8c4", title: "Video 11" }
 ];
 
 const VideoSection = () => {
